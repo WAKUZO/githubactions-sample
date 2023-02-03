@@ -8,7 +8,6 @@ env:
   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
-permissions: read-all|write-all
 
 # jobs:
 #   Explore-GitHub-Actions:
