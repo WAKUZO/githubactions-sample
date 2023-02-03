@@ -2,11 +2,11 @@ name: Slack-notification
 
 on: [push]
 
-# env:
+env:
 #   # SLACK_USERNAME: TestBot
 #   # SLACK_CHANNEL: develop
 #   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
-#   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
 # permissions:
 #   id-token: write
@@ -25,7 +25,7 @@ on: [push]
     #   - run: echo "Hello World!"
 jobs:
   slackNotification:
-    name: Slack Notification
+    name: 2F Slack Notification
     runs-on: ubuntu-latest
 
     steps:
@@ -34,21 +34,19 @@ jobs:
 
     - name: Success
       uses: rtCamp/action-slack-notify@v2
-      # if: ${{ success() }}
+      if: ${{ success() }}
       env:
         SLACK_TITLE: Deploy flow / Success
         SLACK_COLOR: good
         SLACK_MESSAGE: Message for success
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
-
-    # - name: Failure
-    #   uses: rtCamp/action-slack-notify@v2
-    #   if: ${{ failure() }}
-    #   env:
-    #     SLACK_TITLE: Deploy flow / Failure
-    #     SLACK_COLOR: danger
-    #     SLACK_MESSAGE: Message for failure
+    - name: Failure
+      uses: rtCamp/action-slack-notify@v2
+      if: ${{ failure() }}
+      env:
+        SLACK_TITLE: Deploy flow / Failure
+        SLACK_COLOR: danger
+        SLACK_MESSAGE: Message for failure
 
       #-- Slack通知 --#
       # 成功
