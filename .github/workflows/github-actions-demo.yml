@@ -6,10 +6,10 @@ env:
   # 通知がいくチャンネル設定はできる（普通はwebhookを設定したやつ）
   # SLACK_CHANNEL: random
   SLACK_USERNAME: DeployBot
-  # アイコンはGithubのアイコン
+  # 通知用のアイコンはGithubのアイコン
   SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  SLACK_LINK_NAMES: WAKU ZO
+  SLACK_LINK_NAMES: true
 
 jobs:
   slackNotification:
@@ -28,7 +28,7 @@ jobs:
       env:
         SLACK_TITLE: Deploy / Success
         SLACK_COLOR: good
-        SLACK_MESSAGE: デプロイ完了しました🚀
+        SLACK_MESSAGE: @WAKU ZOデプロイ完了しました🚀
 
     # 失敗
     - name: Slack Notification on Failure
