@@ -8,16 +8,23 @@ env:
   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
   
+# jobs:
+#   slack-test:
+#     name: Slack Notification
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 30
+
 jobs:
-  slack-test:
+  Explore-GitHub-Actions:
     name: Slack Notification
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
     steps:
-      - name: Checkout
-      # - uses: actions/checkout@v3
       - run: echo "Hello World!"
+
+    # steps:
+    #   - name: Checkout
+    #   # - uses: actions/checkout@v3
+    #   - run: echo "Hello World!"
 
     # - name: Success
     #   uses: rtCamp/action-slack-notify@v2.0.2
