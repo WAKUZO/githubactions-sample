@@ -2,24 +2,34 @@ name: Slack-notification
 
 on: [push]
 
-env:
+# env:
   # SLACK_USERNAME: TestBot
   # SLACK_CHANNEL: develop
   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
-  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  # SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
   
 # jobs:
 #   slack-test:
 #     name: Slack Notification
 #     runs-on: ubuntu-latest
 #     timeout-minutes: 30
-
-jobs:
-  Explore-GitHub-Actions:
-    name: Slack Notification
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello World!"
+  jobs:
+    slackNotification:
+      name: Slack Notification
+      runs-on: ubuntu-latest
+      
+      steps:
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+# jobs:
+#   Explore-GitHub-Actions:
+#     name: Slack Notification
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "Hello World!"
 
     # steps:
     #   - name: Checkout
@@ -44,17 +54,17 @@ jobs:
 
       #-- Slack通知 --#
       # 成功
-      - name: Slack Notification on Success
-        if: ${{ success() }}
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_TITLE: Deploy Success
-          SLACK_COLOR: good
+      # - name: Slack Notification on Success
+      #   if: ${{ success() }}
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_TITLE: Deploy Success
+      #     SLACK_COLOR: good
 
-      # # 失敗
-      - name: Slack Notification on Failure
-        if: ${{ failure() }}
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_TITLE: Deploy Failure
-          SLACK_COLOR: danger
+      # # # 失敗
+      # - name: Slack Notification on Failure
+      #   if: ${{ failure() }}
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_TITLE: Deploy Failure
+      #     SLACK_COLOR: danger
