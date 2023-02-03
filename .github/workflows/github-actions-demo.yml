@@ -2,11 +2,11 @@ name: Slack-notification
 
 on: [push]
 
-env:
-  # SLACK_USERNAME: TestBot
-  # SLACK_CHANNEL: develop
-  # SLACK_WEBHOOK: https://hooks.slack.com/services/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
-  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+# env:
+#   # SLACK_USERNAME: TestBot
+#   # SLACK_CHANNEL: develop
+#   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
+#   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
   
 # jobs:
 #   slack-test:
