@@ -9,7 +9,6 @@ env:
   # 通知用のアイコンはGithubのアイコン
   SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  SLACK_LINK_NAMES: true
 
 jobs:
   slackNotification:
@@ -19,6 +18,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+      run: echo AAA
 
     #-- Slack通知 --#
     # 成功
@@ -28,7 +28,7 @@ jobs:
       env:
         SLACK_TITLE: Deploy / Success
         SLACK_COLOR: good
-        SLACK_MESSAGE: WAKU ZOデプロイ完了しました🚀
+        SLACK_MESSAGE: デプロイ完了しました🚀
 
     # 失敗
     - name: Slack Notification on Failure
