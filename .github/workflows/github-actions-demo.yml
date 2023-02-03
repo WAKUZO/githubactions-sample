@@ -41,6 +41,7 @@ jobs:
         SLACK_MESSAGE: Message for success
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
+
     # - name: Failure
     #   uses: rtCamp/action-slack-notify@v2
     #   if: ${{ failure() }}
