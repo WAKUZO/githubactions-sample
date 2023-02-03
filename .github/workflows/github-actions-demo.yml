@@ -16,9 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    #-- Gitリポジトリの内容を取得 --#
     - name: Checkout
-      uses: actions/checkout@v3
-      run: echo AAA
+      uses: actions/checkout
 
     #-- Slack通知 --#
     # 成功
