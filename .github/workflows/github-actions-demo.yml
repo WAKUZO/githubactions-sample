@@ -5,7 +5,7 @@ on: [push]
 env:
   SLACK_USERNAME: TestBot
   # SLACK_CHANNEL: develop
-  SLACK_WEBHOOK: https://hooks.slack.com/services/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
+  SLACK_WEBHOOK: https://hooks.slack.com/services/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
   
 jobs:
   slack-test:
