@@ -7,7 +7,9 @@ env:
   # SLACK_CHANNEL: develop
   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  
+
+permissions: read-all|write-all
+
 # jobs:
 #   Explore-GitHub-Actions:
 #     name: Slack Notification
@@ -26,7 +28,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Success
       uses: rtCamp/action-slack-notify@v2
