@@ -2,11 +2,11 @@ name: Slack-notification
 
 on: [push]
 
-env:
-  # SLACK_USERNAME: TestBot
-  # SLACK_CHANNEL: develop
-  # SLACK_WEBHOOK: https://hooks.slack.com/services/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
-  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+# env:
+#   # SLACK_USERNAME: TestBot
+#   # SLACK_CHANNEL: develop
+#   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
+#   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
 # permissions:
 #   id-token: write
@@ -33,15 +33,16 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Success
-      uses: slackapi/slack-github-action@v1.23.0
+      uses: rtCamp/action-slack-notify@v2
       if: ${{ success() }}
       env:
         SLACK_TITLE: Deploy flow / Success
         SLACK_COLOR: good
         SLACK_MESSAGE: Message for success
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
     - name: Failure
-      uses: slackapi/slack-github-action@v1.23.0
+      uses: rtCamp/action-slack-notify@v2
       if: ${{ failure() }}
       env:
         SLACK_TITLE: Deploy flow / Failure
