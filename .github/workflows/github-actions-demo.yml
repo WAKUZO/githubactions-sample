@@ -5,24 +5,8 @@ on: [push]
 env:
 #   # SLACK_USERNAME: TestBot
 #   # SLACK_CHANNEL: develop
-#   # SLACK_WEBHOOK: https://hooks.slack.com/services/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
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
-# permissions:
-#   id-token: write
-#   contents: read
-
-# jobs:
-#   Explore-GitHub-Actions:
-#     name: Slack Notification
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: echo "Hello World!"
-
-    # steps:
-    #   - name: Checkout
-    #   # - uses: actions/checkout@v3
-    #   - run: echo "Hello World!"
 jobs:
   slackNotification:
     name: 2F Slack Notification
@@ -31,7 +15,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      run: aaaa
 
     - name: Success
       uses: rtCamp/action-slack-notify@v2
