@@ -3,7 +3,7 @@ name: Test Notification
 on:
   push:
     branches:
-      - test
+      - staging
 
 jobs:
   test-stg:
