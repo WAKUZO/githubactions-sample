@@ -1,0 +1,12 @@
+name: Test Notification
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  test-stg:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello world
