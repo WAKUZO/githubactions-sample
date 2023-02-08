@@ -31,7 +31,7 @@ jobs:
       env:
         SLACK_TITLE: Deploy / Success
         SLACK_COLOR: good
-        SLACK_MESSAGE: デプロイ完了しました🚀
+        SLACK_MESSAGE: $GITHUB_ACTOR デプロイ完了しました🚀
 
     # 失敗
     - name: Slack Notification on Failure
