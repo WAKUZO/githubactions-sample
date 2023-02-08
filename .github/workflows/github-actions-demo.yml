@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-env:
+# env:
   # 通知がいくチャンネル設定はできる（普通はwebhookを設定したやつ）
   # SLACK_CHANNEL: random
 #   SLACK_USERNAME: DeployBot
