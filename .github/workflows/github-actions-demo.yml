@@ -31,7 +31,7 @@ jobs:
       env:
         SLACK_TITLE: Deploy / Success
         SLACK_COLOR: good
-        SLACK_MESSAGE: デプロイ完了しました🚀\n <@U04DP0C5QJ0>
+        SLACK_MESSAGE: デプロイ完了しました🚀\n <@here>
 
     # 失敗
     - name: Slack Notification on Failure
