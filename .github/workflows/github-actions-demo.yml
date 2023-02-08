@@ -11,6 +11,7 @@ env:
   # 通知用のアイコンはGithubのアイコン
   SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  SLACK_LINK_NAMES: true
 
 jobs:
   slackNotification:
